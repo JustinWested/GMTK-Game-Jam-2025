@@ -1,0 +1,660 @@
+[gd_scene load_steps=44 format=3 uid="uid://cuuv1jg86tr4h"]
+
+[ext_resource type="PackedScene" uid="uid://ncsg86y3mgrd" path="res://gas_station.tscn" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://dmp122m7yuduh" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bmib0n7uxy572" path="res://camera_pivot.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dxa263ue6m0t5" path="res://player_model.tscn" id="3_1bvp3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0xm2m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_top_color = Color(0.552941, 0.623529, 0.752941, 1)
+sky_horizon_color = Color(0.814812, 0.857961, 0.908635, 1)
+ground_bottom_color = Color(0.0834575, 0.185463, 0.25875, 1)
+ground_horizon_color = Color(0.814812, 0.857961, 0.908635, 1)
+energy_multiplier = 1.45
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+material = SubResource("StandardMaterial3D_7dm0k")
+size = Vector3(13, 0.1, 26)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(13, 0.1, 26)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(22.41, 0.1, 21.245)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h2yge"]
+size = Vector2(20, 10.19)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1bvp3"]
+size = Vector3(19.655, 0.1, 10.545)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg77c"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdy4"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cqfq"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaehf"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_074og"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
+distance_fade_mode = 2
+distance_fade_max_distance = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vw27"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
+albedo_color = Color(0.247262, 0.418996, 0.999999, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lquwl"]
+material = SubResource("StandardMaterial3D_1bvp3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_272bh"]
+material = SubResource("StandardMaterial3D_7mycd")
+size = Vector3(1.405, 0.455, 1.03)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+albedo_color = Color(1.20327e-08, 0.347168, 4.33177e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1bvp3"]
+material = SubResource("StandardMaterial3D_h2yge")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
+material = SubResource("StandardMaterial3D_lquwl")
+size = Vector3(1.01, 0.43, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+albedo_color = Color(0.572669, 1.1792e-06, 3.36915e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5vw27"]
+material = SubResource("StandardMaterial3D_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4c57u"]
+material = SubResource("StandardMaterial3D_kek77")
+size = Vector3(1, 0.565, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_efxa6"]
+
+[node name="Main" type="Node3D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" type="TextureRect" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 4.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_0xm2m")
+
+[node name="GameStateManager" type="Node" parent="."]
+
+[node name="LoopTimer" type="Timer" parent="GameStateManager"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Store" type="Node3D" parent="."]
+
+[node name="WallsFloors" type="Node3D" parent="Store"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Store/WallsFloors"]
+mesh = SubResource("BoxMesh_ig7tw")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Store/WallsFloors/MeshInstance3D"]
+physics_material_override = SubResource("PhysicsMaterial_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Store/WallsFloors/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_h2yge")
+debug_color = Color(0, 0.6, 0.701961, 0.815686)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Store/WallsFloors"]
+transform = Transform3D(-1.09278e-08, -1.048, 0, 0.25, -4.58095e-08, 0, 0, 0, 1.342, 6.5275, 2.36985, 0)
+visible = false
+layers = 2
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Store/WallsFloors/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Store/WallsFloors/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Store/WallsFloors"]
+transform = Transform3D(4.77671e-16, 4.58095e-08, 1.342, 0.25, -4.58095e-08, 0, 1.09278e-08, 1.048, -5.86607e-08, 0, 2.36963, -12.8796)
+visible = false
+layers = 2
+mesh = SubResource("PlaneMesh_h2yge")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Store/WallsFloors/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Store/WallsFloors/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Store/WallsFloors"]
+transform = Transform3D(4.77671e-16, 4.58095e-08, -1.342, 0.25, -4.58095e-08, 2.11758e-22, -1.09278e-08, -1.048, -5.86607e-08, 0, 2.36963, 12.9592)
+visible = false
+layers = 2
+mesh = SubResource("PlaneMesh_h2yge")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Store/WallsFloors/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Store/WallsFloors/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Store/WallsFloors"]
+transform = Transform3D(-1.09278e-08, 1.048, 0, -0.25, -4.58095e-08, 0, 0, 0, 1.342, -6.48295, 2.36985, 0)
+visible = false
+layers = 2
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Store/WallsFloors/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Store/WallsFloors/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="InteriorObjects" type="Node3D" parent="Store"]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.145, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77798, 0, -9.94795)
+use_collision = true
+size = Vector3(7.48079, 1.81, 1)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38358, -0.561032, 4.19068)
+use_collision = true
+size = Vector3(2.135, 1.6, 10.31)
+material = SubResource("StandardMaterial3D_5vw27")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04491, 0)
+size = Vector3(0.11, 2.875, 10.305)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1698, 0)
+size = Vector3(1, 0.065, 10.225)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83608, 0)
+size = Vector3(1, 0.065, 10.225)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77706, -0.561032, 4.19068)
+use_collision = true
+size = Vector3(2.135, 1.6, 10.31)
+material = SubResource("StandardMaterial3D_4c57u")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04491, 0)
+size = Vector3(0.11, 2.875, 10.305)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1698, 0)
+size = Vector3(1, 0.065, 10.225)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83608, 0)
+size = Vector3(1, 0.065, 10.225)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, -6.35529, 1.86049, -3.5579)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D4"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D4"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.399053, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D4"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.399053, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D4"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.399053, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, -6.35529, 1.86049, -0.831356)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_efxa6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D5"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D5"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.345522, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D5"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.345522, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D5"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.345522, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, -6.35529, 1.86049, 1.88503)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_dg77c")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D6"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D6"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.332615, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D6"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.332615, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D6"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.332615, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, -6.35529, 1.86049, 4.59535)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_ycdy4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D7"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D7"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D7"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D7"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, -6.35529, 1.86049, 7.2959)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_w48qg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D8"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D8"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D8"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D8"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, -6.35529, 1.86049, 9.8763)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_vivmo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D9"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D9"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D9"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D9"]
+transform = Transform3D(0.455, 0, 0, 0, 1, 0, 0, 0, 1, 0.361561, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.81388, 1.86049, 11.8968)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_2cqfq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621, 0.16451)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337038, 0.16451)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15507, 0.16451)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.09469, 1.86049, 11.8968)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_yaehf")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5917, 1.86049, 11.8968)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_074og")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Store/InteriorObjects" groups=["fadeable"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.31228, 1.86049, 11.8968)
+layers = 2
+use_collision = true
+size = Vector3(1.55, 4.115, 2.63)
+material = SubResource("StandardMaterial3D_cegan")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49884, 0.14114, 0)
+layers = 2
+operation = 2
+size = Vector3(1.215, 3.535, 2.375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337038, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Store/InteriorObjects/CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15507, 0)
+layers = 2
+size = Vector3(1.465, 0.055, 2.56)
+
+[node name="Node3D" parent="Store" instance=ExtResource("1_h2yge")]
+transform = Transform3D(-4.80825e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 22.331, 0, 4.792)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93442, 0, -5.67757)
+script = ExtResource("1_ig7tw")
+speed = 1.3
+visuals_node_path = NodePath("Visuals")
+camera_pivot_path = NodePath("CameraPivot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.98023e-08)
+shape = SubResource("CapsuleShape3D_5vw27")
+
+[node name="Visuals" parent="Player" instance=ExtResource("3_1bvp3")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 0, 0, 0)
+
+[node name="Visualsold" type="Node3D" parent="Player"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Visualsold"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_lquwl")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Visualsold/MeshInstance3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.413804, -0.443045)
+layers = 3
+mesh = SubResource("BoxMesh_272bh")
+
+[node name="CameraPivot" type="Node3D" parent="Player" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.957319, 0.289032, 0, -0.289032, 0.957319, 0, 1.33256, 0.144403)
+script = ExtResource("2_0xm2m")
+player = NodePath("..")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.19209e-07, 0, 1.19209e-07, 1, 0.697334, 0.720363, 0.217491)
+spring_length = 1.5
+
+[node name="BaseCamera" type="Camera3D" parent="Player/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.994085, 0.108607, 0, -0.108607, 0.994085, 0.777379, 0.617182, 1.4898)
+cull_mask = 1047555
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/CameraPivot/BaseCamera"]
+transform = Transform3D(0.982532, -0.00577727, 0.186006, 0.0728179, 0.931758, -0.355704, -0.171257, 0.363035, 0.915902, 0, -0.342116, -0.145466)
+target_position = Vector3(0, 0.03, -6.155)
+collide_with_areas = true
+
+[node name="Clerk" type="CharacterBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.95905, 0, -11.4191)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clerk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_0xm2m")
+
+[node name="Visuals" type="Node3D" parent="Clerk"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Clerk/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_1bvp3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Clerk/Visuals/MeshInstance3D"]
+transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0.41243, -0.308553)
+mesh = SubResource("BoxMesh_7mycd")
+
+[node name="Robber" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.8165, 0, -6.67894)
+
+[node name="Visuals" type="Node3D" parent="Robber"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Robber/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_5vw27")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Robber/Visuals/MeshInstance3D"]
+transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, 0, 0.415169, -0.343822)
+mesh = SubResource("BoxMesh_4c57u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Robber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_efxa6")

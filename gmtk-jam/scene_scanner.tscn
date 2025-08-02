@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ii7dpjunbaxh"]
+
+[ext_resource type="Script" uid="uid://dd8482gd4joso" path="res://scene_scanner.gd" id="1_wqfwp"]
+[ext_resource type="PackedScene" uid="uid://ncsg86y3mgrd" path="res://gas_station.tscn" id="2_w8r5x"]
+
+[node name="Control" type="Node"]
+script = ExtResource("1_wqfwp")
+scene_to_scan = ExtResource("2_w8r5x")

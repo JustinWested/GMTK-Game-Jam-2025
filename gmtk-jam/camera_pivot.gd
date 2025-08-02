@@ -9,8 +9,9 @@ extends Node3D
 @export var fade_speed: float = 5.0
 @export var original_fade_distance: float = 50.0
 
-@onready var raycast: RayCast3D = $BaseCamera/RayCast3D
-@onready var camera: Camera3D = $BaseCamera
+@onready var raycast: RayCast3D = $RayCast3D
+@onready var camera: Camera3D = $SpringArm3D/BaseCamera
+
 
 var managed_objects = {}
 
@@ -23,7 +24,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation.y -= event.relative.x / sensitivity
 		rotation.x -= event.relative.y / sensitivity
-		rotation.x = clamp(rotation.x, deg_to_rad(-45), deg_to_rad(28))
+		rotation.x = clamp(rotation.x, deg_to_rad(-55), deg_to_rad(38))
 		
 		
 func get_fade_material(node: Node) -> Material:
@@ -48,7 +49,6 @@ func _physics_process(delta: float) -> void:
 
 	# STEP 1: DETECT what object should be faded.
 	var obstructed_collider = null
-	raycast.target_position = camera.to_local(player.global_position)
 	raycast.force_raycast_update()
 
 	if raycast.is_colliding():

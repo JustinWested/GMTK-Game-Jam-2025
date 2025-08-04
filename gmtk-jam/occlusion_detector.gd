@@ -10,7 +10,6 @@ var _last_occluder: MeshInstance3D = null
 
 
 func _physics_process(_delta: float) -> void:
-	# Ensure we have a valid player to target.
 	if not is_instance_valid(_player):
 		return
 

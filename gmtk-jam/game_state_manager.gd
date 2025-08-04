@@ -1,3 +1,4 @@
+# res://game_state_manager.gd
 # Manages the game's time loop, timeline events, and state transitions.
 # It acts as a central broadcaster, emitting signals at key moments that other
 # nodes (like NPCs) can listen and react to.
@@ -43,6 +44,9 @@ func _ready() -> void:
 	_loop_timer.one_shot = true
 	# Connect the timer's timeout signal to our end-of-loop function.
 	_loop_timer.timeout.connect(_on_loop_timer_timeout)
+	
+	# Add to group for easier finding
+	add_to_group("game_state_manager")
 	
 	# Start the very first loop.
 	start_loop()

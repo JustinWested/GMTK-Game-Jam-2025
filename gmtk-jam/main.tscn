@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cuuv1jg86tr4h"]
+[gd_scene load_steps=47 format=3 uid="uid://cuuv1jg86tr4h"]
 
 [ext_resource type="Script" uid="uid://br8niiimia345" path="res://hud.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://veceeibr1uey" path="res://game_state_manager.gd" id="1_7mycd"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bmib0n7uxy572" path="res://camera_pivot.gd" id="2_0xm2m"]
 [ext_resource type="Shader" uid="uid://idu5ejinweb2" path="res://main.gdshader" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://dxa263ue6m0t5" path="res://player_model.tscn" id="3_1bvp3"]
-[ext_resource type="Script" uid="uid://c0nc53125yxyd" path="res://robber.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://cw11nc73fu3ro" path="res://robber_ai.gd" id="8_5vw27"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0xm2m"]
 
@@ -44,6 +44,8 @@ size = Vector3(13, 0.1, 26)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
 size = Vector3(13, 0.1, 26)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_272bh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
 size = Vector2(20, 20)
@@ -107,7 +109,9 @@ distance_fade_max_distance = 0.1
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vw27"]
 radius = 0.595519
-height = 3.06361
+height = 3.68856
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5vw27"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
 
@@ -207,6 +211,10 @@ physics_material_override = SubResource("PhysicsMaterial_0xm2m")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Store/WallsFloors/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_h2yge")
 debug_color = Color(0, 0.6, 0.701961, 0.815686)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport/Store/WallsFloors/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0.131724, 0)
+navigation_mesh = SubResource("NavigationMesh_272bh")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Store/WallsFloors"]
 transform = Transform3D(-1.09278e-08, -1.048, 0, 0.25, -4.58095e-08, 0, 0, 0, 1.342, 6.5275, 2.36985, 0)
@@ -609,16 +617,19 @@ size = Vector3(1.465, 0.055, 2.56)
 [node name="Node3D" parent="SubViewportContainer/SubViewport/Store" instance=ExtResource("1_h2yge")]
 transform = Transform3D(-4.80825e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 22.331, 0, 4.792)
 
-[node name="Player" type="CharacterBody3D" parent="SubViewportContainer/SubViewport" groups=["player"]]
+[node name="Player" type="CharacterBody3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("hand_position_helper", "item_container", "_animation_tree") groups=["player"]]
 transform = Transform3D(0.187313, 0, 0.9823, 0, 1, 0, -0.9823, 0, 0.187313, 5.37595, 0.514731, -1.12718)
 script = ExtResource("1_ig7tw")
 walk_speed = 1.2
 sneak_speed = 1.2
 visuals_node_path = NodePath("Visuals")
 camera_pivot_path = NodePath("CameraPivot")
+hand_position_helper = NodePath("Visuals/rig/Skeleton3D/BoneAttachment3D/HoldAttachment")
+item_container = NodePath("CarryVolume/ItemContainer")
+_animation_tree = NodePath("Visuals/rig/AnimationPlayer/AnimationTree")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Player"]
-transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0, 1, -2.98023e-08)
+transform = Transform3D(0.56, 0, -3.72529e-08, 0, 0.56, 0, 3.72529e-08, 0, 0.56, 0, 0.89086, 0)
 shape = SubResource("CapsuleShape3D_5vw27")
 
 [node name="Visuals" parent="SubViewportContainer/SubViewport/Player" instance=ExtResource("3_1bvp3")]
@@ -639,10 +650,20 @@ cull_mask = 1047555
 
 [node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/Player/CameraPivot"]
 transform = Transform3D(-4.18, 0, 0, 0, 0.0215441, -4.12464, 0, 1.63486, 0.0543544, 0.168375, 0.485996, -0.515832)
+target_position = Vector3(0, -0.45, 0)
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.0778749, 0.315617, 1, 1)
-debug_shape_thickness = 5
+
+[node name="CarryVolume" type="Area3D" parent="SubViewportContainer/SubViewport/Player"]
+transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, -0.051892, 1.6106, -0.272134)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Player/CarryVolume"]
+transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 0, 0, 0)
+shape = SubResource("SphereShape3D_5vw27")
+
+[node name="ItemContainer" type="Node3D" parent="SubViewportContainer/SubViewport/Player/CarryVolume"]
+transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 0, 0, 0)
 
 [node name="Clerk" type="CharacterBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.95905, 0, -11.4191)
@@ -663,7 +684,7 @@ mesh = SubResource("BoxMesh_7mycd")
 
 [node name="Robber" type="CharacterBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.8165, 0, -6.67894)
-script = ExtResource("6_272bh")
+script = ExtResource("8_5vw27")
 
 [node name="Visuals" type="Node3D" parent="SubViewportContainer/SubViewport/Robber"]
 
@@ -678,3 +699,11 @@ mesh = SubResource("BoxMesh_4c57u")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Robber"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_efxa6")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="SubViewportContainer/SubViewport/Robber"]
+max_speed = 2.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Robber"]
+root_node = NodePath("NodePath(\"..\")")
+
+[node name="RobberVisuals" type="Node3D" parent="SubViewportContainer/SubViewport/Robber"]
